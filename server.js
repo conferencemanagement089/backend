@@ -5,7 +5,14 @@ const app = express();
 const port = process.env.PORT || 5001;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'https://frontend-ht32.onrender.com/', // Allow only your frontend
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true // If using authentication tokens or cookies
+}));
+app.options('*', cors());
+
 app.use(express.json());
 
 // MongoDB connection
