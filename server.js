@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB connection
-mongoose.connect('mongodb://0.0.0.0:27017/conference', {
+mongoose.connect('mongodb+srv://conferencemanagement089:2qxneLB5wrsrOBVs@conference-management.gphbn.mongodb.net/?retryWrites=true&w=majority&appName=conference-management', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
